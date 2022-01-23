@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import Content from "./Content";
+import Navbar from "./Navbar";
+import { makeStyles } from "@material-ui/core/styles";
+import Image from "./images/vacay.jpeg";
+import CssBaseline from "@material-ui/core/CssBaseline";
+const useStyles = makeStyles((theme) => ({
+  root: {
+    minHeight: "100vh",
+    backgroundImage: `url(${Image})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  },
+}));
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <CssBaseline />
+      <Navbar></Navbar>
+      <Content></Content>
     </div>
   );
 }
