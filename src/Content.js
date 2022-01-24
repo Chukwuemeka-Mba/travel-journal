@@ -12,17 +12,20 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "100vh",
     fontFamily: "Nunito",
   },
+  cardBody: {
+    margin: "10px",
+  },
 }));
 
-function Content(item) {
+function Content(props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Card>
+      <Card className={classes.cardBody}>
         <CardMedia
           component="img"
           height="140"
-          image={item.imageUrl}
+          image={props.imageUrl}
           alt="green iguana"
         />
         <CardContent>

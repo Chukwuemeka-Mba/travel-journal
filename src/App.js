@@ -13,10 +13,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
   },
+  cardBody: {
+    display: "grid",
+    flexDirection: "row",
+    maxWidth: "50vh",
+  },
 }));
 
-const dataArray = data.map((item) => {
-  return <Content {...item} />;
+const Cards = data.map((item) => {
+  return <Content key={item.id} {...item} />;
 });
 function App() {
   const classes = useStyles();
@@ -24,7 +29,7 @@ function App() {
     <div className={classes.root}>
       <CssBaseline />
       <Navbar />
-      <Content />
+      <section className={classes.cardBody}>{Cards}</section>
     </div>
   );
 }
