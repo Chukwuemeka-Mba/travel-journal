@@ -17,8 +17,8 @@ function App() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Navbar></Navbar>
-      <Content></Content>
+      <Navbar />
+      <Content />
     </div>
   );
 }
