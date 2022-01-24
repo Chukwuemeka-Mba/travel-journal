@@ -10,9 +10,11 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
+    fontFamily: "Nunito",
   },
 }));
-export default function () {
+
+function Content(item) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -20,7 +22,7 @@ export default function () {
         <CardMedia
           component="img"
           height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image={item.imageUrl}
           alt="green iguana"
         />
         <CardContent>
@@ -40,3 +42,5 @@ export default function () {
     </div>
   );
 }
+
+export default Content;

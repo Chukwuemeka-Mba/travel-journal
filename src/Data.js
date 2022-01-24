@@ -1,5 +1,6 @@
 const data = [
   {
+    id: 1,
     title: "Mount Fuji",
     location: "Japan",
     googleMapsUrl: "https://goo.gl/maps/1DGM5WrWnATgkSNB8",
@@ -10,6 +11,7 @@ const data = [
     imageUrl: "https://unsplash.com/photos/WLxQvbMyfas",
   },
   {
+    id: 2,
     title: "Mount Fuji",
     location: "Japan",
     googleMapsUrl: "https://goo.gl/maps/1DGM5WrWnATgkSNB8",
@@ -20,6 +22,7 @@ const data = [
     imageUrl: "https://unsplash.com/photos/WLxQvbMyfas",
   },
   {
+    id: 3,
     title: "Mount Fuji",
     location: "Japan",
     googleMapsUrl: "https://goo.gl/maps/1DGM5WrWnATgkSNB8",
@@ -30,6 +33,7 @@ const data = [
     imageUrl: "https://unsplash.com/photos/WLxQvbMyfas",
   },
   {
+    id: 4,
     title: "Mount Fuji",
     location: "Japan",
     googleMapsUrl: "https://goo.gl/maps/1DGM5WrWnATgkSNB8",

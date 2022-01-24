@@ -4,6 +4,8 @@ import Navbar from "./Navbar";
 import { makeStyles } from "@material-ui/core/styles";
 import Image from "./images/vacay.jpeg";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import data from "./Data";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
@@ -12,6 +14,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
   },
 }));
+
+const dataArray = data.map((item) => {
+  return <Content {...item} />;
+});
 function App() {
   const classes = useStyles();
   return (
