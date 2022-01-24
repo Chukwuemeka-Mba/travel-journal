@@ -1,16 +1,12 @@
 import React from "react";
-// import { BottomNavigationAction } from "@mui/material";
-// import { LocationOnIcon } from "@mui/material";
+
 function Content() {
   return (
     <div>
       <div>
-        <img />
+        <img alt="" />
       </div>
-      <div className="" location>
-        <h3> Hello</h3>
-        {/* <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} /> */}
-      </div>
+      <div className="" location></div>
     </div>
   );
 }
