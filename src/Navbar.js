@@ -7,6 +7,8 @@ import { Toolbar } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Collapse } from "@material-ui/core";
 import PublicIcon from "@material-ui/icons/Public";
+import { Link as Scroll } from "react-scroll";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -82,9 +84,11 @@ export default function Navbar() {
             <br />
             <span className={classes.colorText}>Travel Journal</span>
           </h1>
-          <IconButton className={classes.container}>
-            <ExpandMoreIcon className={classes.goDown} />
-          </IconButton>
+          <Scroll to="places" smooth={true}>
+            <IconButton className={classes.container}>
+              <ExpandMoreIcon className={classes.goDown} />
+            </IconButton>
+          </Scroll>
         </div>
       </Collapse>
     </div>

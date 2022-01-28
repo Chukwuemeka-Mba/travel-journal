@@ -1,7 +1,7 @@
 import { useLayoutEffect, useState } from "react";
 
 function useWindowPosition(id) {
-  const [animation, setAnimation] = useState(false);
+  const [animation, setAnimation] = useState(true);
 
   useLayoutEffect(() => {
     function updatePosition() {
