@@ -1,19 +1,32 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: "100vh",
-    fontFamily: "Nunito",
+    margin: "10px",
   },
   cardBody: {
     margin: "10px",
+    fontFamily: "Nunito",
+    background: "rgba(0, 0, 1, 0.2)",
+  },
+  title: {
+    fontFamily: "Nunito",
+    fontWeight: "bold",
+    fontSize: "2rem",
+    color: "white",
+  },
+  imgClass: {
+    height: "200px",
+  },
+  desc: {
+    fontFamily: "Nunito",
+    fontSize: "1.1rem",
+    color: "#ddd",
   },
 }));
 
@@ -27,20 +40,21 @@ function Content(props) {
           height="140"
           image={props.imageUrl}
           alt="green iguana"
+          className={classes.imgClass}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
+          <Typography
+            gutterBottom
+            variant="h5"
+            className={classes.title}
+            component="div"
+          >
+            {props.title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          <Typography variant="body2" className={classes.desc}>
+            {props.description}
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
-        </CardActions>
       </Card>
     </div>
   );

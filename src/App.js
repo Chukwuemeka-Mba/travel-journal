@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Image from "./images/vacay.jpeg";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import data from "./Data";
-
+import useWindowPosition from "./Scroll";
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
@@ -14,22 +14,29 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
   },
   cardBody: {
-    display: "grid",
-    flexDirection: "row",
-    maxWidth: "50vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
   },
 }));
 
 const Cards = data.map((item) => {
   return <Content key={item.id} {...item} />;
 });
+
 function App() {
   const classes = useStyles();
+  const checked = useWindowPosition("header");
   return (
     <div className={classes.root}>
       <CssBaseline />
       <Navbar />
-      <section className={classes.cardBody}>{Cards}</section>
+      <section className={classes.cardBody} checked={checked}>
+        {Cards}
+      </section>
     </div>
   );
 }
