@@ -5,8 +5,8 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { Collapse } from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
+import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
+const useStyles = makeStyles(() => ({
   root: {
     margin: "10px",
   },
@@ -21,6 +21,15 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2rem",
     color: "white",
   },
+  icons: {
+    display: "flex",
+    flexDirection: "row",
+    gap: "10px",
+    fontFamily: "Nunito",
+    fontWeight: "bold",
+    color: "white",
+    marginBottom: "0px",
+  },
   imgClass: {
     height: "200px",
   },
@@ -28,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Nunito",
     fontSize: "1.1rem",
     color: "#ddd",
+  },
+  locationIcon: {
+    marginTop: "15px",
   },
 }));
 
@@ -53,6 +65,13 @@ function Content(props) {
             className={classes.imgClass}
           />
           <CardContent>
+            <span className={classes.icons}>
+              <LocationOnOutlinedIcon className={classes.locationIcon} />
+              <h3>{props.location}</h3>
+              <a href={props.googleMapsUrl} className={classes.icons}>
+                <h3> View on Google Maps </h3>
+              </a>
+            </span>
             <Typography
               gutterBottom
               variant="h5"
@@ -61,6 +80,10 @@ function Content(props) {
             >
               {props.title}
             </Typography>
+            <span className={classes.icons}>
+              <h3>{props.startDate} -</h3>
+              <h3>{props.endDate}</h3>
+            </span>
             <Typography variant="body2" className={classes.desc}>
               {props.description}
             </Typography>
