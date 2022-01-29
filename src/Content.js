@@ -6,6 +6,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { Collapse } from "@material-ui/core";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
+
 const useStyles = makeStyles(() => ({
   root: {
     margin: "10px",
@@ -51,45 +52,39 @@ function Content(props) {
   }, []);
   return (
     <div className={classes.root} id="header">
-      <Collapse
-        in={checked}
-        {...(checked ? { timeout: 1000 } : {})}
-        collapsedHeight={50}
-      >
-        <Card className={classes.cardBody}>
-          <CardMedia
-            component="img"
-            height="140"
-            image={props.imageUrl}
-            alt="green iguana"
-            className={classes.imgClass}
-          />
-          <CardContent>
-            <span className={classes.icons}>
-              <LocationOnOutlinedIcon className={classes.locationIcon} />
-              <h3>{props.location}</h3>
-              <a href={props.googleMapsUrl} className={classes.icons}>
-                <h3> View on Google Maps </h3>
-              </a>
-            </span>
-            <Typography
-              gutterBottom
-              variant="h5"
-              className={classes.title}
-              component="div"
-            >
-              {props.title}
-            </Typography>
-            <span className={classes.icons}>
-              <h3>{props.startDate} -</h3>
-              <h3>{props.endDate}</h3>
-            </span>
-            <Typography variant="body2" className={classes.desc}>
-              {props.description}
-            </Typography>
-          </CardContent>
-        </Card>
-      </Collapse>
+      <Card className={classes.cardBody}>
+        <CardMedia
+          component="img"
+          height="140"
+          image={props.imageUrl}
+          alt="green iguana"
+          className={classes.imgClass}
+        />
+        <CardContent>
+          <span className={classes.icons}>
+            <LocationOnOutlinedIcon className={classes.locationIcon} />
+            <h3>{props.location}</h3>
+            <a href={props.googleMapsUrl} className={classes.icons}>
+              <h3> View on Google Maps </h3>
+            </a>
+          </span>
+          <Typography
+            gutterBottom
+            variant="h5"
+            className={classes.title}
+            component="div"
+          >
+            {props.title}
+          </Typography>
+          <span className={classes.icons}>
+            <h3>{props.startDate} -</h3>
+            <h3>{props.endDate}</h3>
+          </span>
+          <Typography variant="body2" className={classes.desc}>
+            {props.description}
+          </Typography>
+        </CardContent>
+      </Card>
     </div>
   );
 }
